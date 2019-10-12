@@ -4,8 +4,8 @@ from uuid import uuid4
 from telegram import InlineQueryResultArticle, InputTextMessageContent, Bot
 from telegram.ext import Updater, InlineQueryHandler, CommandHandler, Dispatcher
 
-from config import BOT_TOKEN
-from text_generators import *
+from _config import BOT_TOKEN
+from _text_generators import *
 
 # from telegram.utils.helpers import escape_markdown
 
