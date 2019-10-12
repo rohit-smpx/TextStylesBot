@@ -19,3 +19,17 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write("ok")
         return
+
+    def do_GET(self):
+        dispatcher = Bot.get_handler()
+
+        json_string = bytes_to_native_str(self.request.body)
+        data = json.loads(json_string)
+        update = Update.de_json(data, bot)
+        dispatcher.process_update(update)
+
+        self.send_response(200)
+        self.send_header('Content-type','text/plain')
+        self.end_headers()
+        self.wfile.write("ok")
+        return
