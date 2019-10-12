@@ -3,11 +3,11 @@ from http.server import BaseHTTPRequestHandler
 from future.utils import bytes_to_native_str
 from telegram import Update
 
-from _bot import get_handler
+from . import _bot as Bot
 
 class handler(BaseHTTPRequestHandler):
     def do_POST(self):
-        dispatcher = get_handler()
+        dispatcher = Bot.get_handler()
 
         json_string = bytes_to_native_str(self.request.body)
         data = json.loads(json_string)
