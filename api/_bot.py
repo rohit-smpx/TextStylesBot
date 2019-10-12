@@ -266,7 +266,7 @@ def main():
 
 def get_handler():
     bot = Bot(token=BOT_TOKEN)
-    dispatcher = Dispatcher(bot, None, workers=0)
+    dp = Dispatcher(bot, None, workers=0)
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
 
@@ -274,6 +274,8 @@ def get_handler():
 
     # log all errors
     dp.add_error_handler(error)
+
+    return dp
 
 
 if __name__ == '__main__':
