@@ -1,8 +1,8 @@
 import logging
 from uuid import uuid4
 
-from telegram import InlineQueryResultArticle, InputTextMessageContent
-from telegram.ext import Updater, InlineQueryHandler, CommandHandler
+from telegram import InlineQueryResultArticle, InputTextMessageContent, Bot
+from telegram.ext import Updater, InlineQueryHandler, CommandHandler, Dispatcher
 
 from config import BOT_TOKEN
 from text_generators import *
@@ -263,6 +263,17 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
+
+def get_handler():
+    bot = Bot(token=BOT_TOKEN)
+    dispatcher = Dispatcher(bot, None, workers=0)
+    # on different commands - answer in Telegram
+    dp.add_handler(CommandHandler("start", start))
+
+    dp.add_handler(InlineQueryHandler(inlinequery))
+
+    # log all errors
+    dp.add_error_handler(error)
 
 
 if __name__ == '__main__':
