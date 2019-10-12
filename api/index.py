@@ -22,12 +22,6 @@ class handler(BaseHTTPRequestHandler):
         return
 
     def do_GET(self):
-        dispatcher, bot = Bot.get_handler()
-
-        data = json.loads('{}')
-        update = Update.de_json(data, bot)
-        dispatcher.process_update(update)
-
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
