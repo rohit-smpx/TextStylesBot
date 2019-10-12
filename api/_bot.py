@@ -4,7 +4,7 @@ from uuid import uuid4
 from telegram import InlineQueryResultArticle, InputTextMessageContent, Bot
 from telegram.ext import Updater, InlineQueryHandler, CommandHandler, Dispatcher
 
-from . import _config
+from ._config import BOT_TOKEN
 from ._text_generators import *
 
 # from telegram.utils.helpers import escape_markdown
@@ -243,7 +243,7 @@ def error(bot, update, erro):
 
 def main():
     # Create the Updater and pass it your bot's token.
-    updater = Updater(_config.BOT_TOKEN)
+    updater = Updater(BOT_TOKEN)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -275,7 +275,7 @@ def get_handler():
     # log all errors
     dp.add_error_handler(error)
 
-    return dp
+    return dp, bot
 
 
 if __name__ == '__main__':

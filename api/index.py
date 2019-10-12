@@ -7,9 +7,10 @@ from . import _bot as Bot
 
 class handler(BaseHTTPRequestHandler):
     def do_POST(self):
-        dispatcher = Bot.get_handler()
+        dispatcher, bot = Bot.get_handler()
 
-        json_string = bytes_to_native_str(self.request.body)
+        content_len = int(self.headers.get('Content-Length', 0))
+        json_string = self.rfile.read(content_len)
         data = json.loads(json_string)
         update = Update.de_json(data, bot)
         dispatcher.process_update(update)
@@ -17,19 +18,18 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write("ok")
+        self.wfile.write("ok".encode("utf-8"))
         return
 
     def do_GET(self):
-        dispatcher = Bot.get_handler()
+        dispatcher, bot = Bot.get_handler()
 
-        json_string = bytes_to_native_str(self.request.body)
-        data = json.loads(json_string)
+        data = json.loads('{}')
         update = Update.de_json(data, bot)
         dispatcher.process_update(update)
 
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write("ok")
+        self.wfile.write("ok".encode("utf-8"))
         return
