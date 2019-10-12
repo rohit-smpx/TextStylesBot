@@ -1,16 +1,43 @@
 # FancyTextBot
 
-Get fancy text styles for your Telegram Messages
+Get fancy text styles for your Telegram Messages. With **live preview** of output as you type.
+
+![Example Preview](./preview.png)
+
+Deployed using [now-cli](https://zeit.co/).
+
+---
+
+## Run
+
+### Dev Polling Mode
+
+Run the _bot.py file
+
+### Prod Webhook Mode
+
+Set telegram bot webhook by:
+
+```
+https://api.telegram.org/bot{{BOT_TOKEN}}/setWebhook?url={{DEPLOYED_WEBHOOK_ENDPOINT}}
+```
+
+Deploy:
+
+```sh
+# If running first time:
+# npm i -g now
+# now login 
+now
+```
 
 ---
 
 ## Try me!
 
-**Try it out by tagging [@fancy_text_bot](https://t.me/fancy_text_bot) on any chat screen on Telegram!**
+**Try it out by tagging [@fancy_text_bot](https://telegram.me/fancy_text_bot) on any chat screen on Telegram!**
 
----
-
-## Currently supported text styles
+### Currently supported text styles
 
 - Z̸͙ͫ̕a̧̼̟͂̇l̢͉̉̀g̨̟̮͉͜ó̷̮ 
 - bRoKeN CaPsLoCk

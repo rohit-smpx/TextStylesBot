@@ -19,15 +19,15 @@ logger = logging.getLogger(__name__)
 
 def start(bot, update):
     # Send the message with menu
-    update.message.reply_text("*Welcome to Text Fomatting Bot!*\n\n"
+    update.message.reply_text("*Welcome to Fancy Text Bot!*\n\n"
                               "Currently I only work via inline query, "
-                              "on any conversation summon me using @txtfrmtbot"
+                              "on any conversation summon me using @fancy_text_bot"
                               ", type your message and choose the style you"
                               " want.\n\n"
                               "My code can be found [here]"
-                              "(https://github.com/eitchtee/TextStylesBot).\n"
+                              "(https://github.com/rohit-smpx/telegram-fancy_text_bot).\n"
                               "Report any issue or suggestions [here]"
-                              "(https://github.com/eitchtee/TextStylesBot/issues).\n\n"
+                              "(https://github.com/rohit-smpx/telegram-fancy_text_bot/issues).\n\n"
                               "🤖 Hope you like me!",
                               parse_mode='Markdown',
                               disable_web_page_preview=True)
