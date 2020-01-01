@@ -21,11 +21,11 @@ def start(bot, update):
     # Send the message with menu
     update.message.reply_text("*Welcome to Fancy Text Bot!*\n\n"
                               "Currently I only work via inline query, "
-                              "on any conversation summon me using @fancy_text_bot"
+                              "on any conversation summon me using @fancy\_text\_bot"
                               ", type your message and choose the style you"
                               " want.\n\n"
-                              "My code can be found [here]"
-                              "(https://github.com/rohit-smpx/telegram-fancy_text_bot).\n"
+                              "More info can be found [here]"
+                              "(https://fancytext.boring.download/).\n"
                               "Report any issue or suggestions [here]"
                               "(https://github.com/rohit-smpx/telegram-fancy_text_bot/issues).\n\n"
                               "🤖 Hope you like me!",
