@@ -27,7 +27,7 @@ def start(bot, update):
                               "More info can be found [here]"
                               "(https://fancytext.boring.download/).\n"
                               "Report any issue or suggestions [here]"
-                              "(https://github.com/rohit-smpx/telegram-fancy_text_bot/issues).\n\n"
+                              "(https://github.com/rohit-gohri/telegram-fancy_text_bot/issues).\n\n"
                               "🤖 Hope you like me!",
                               parse_mode='Markdown',
                               disable_web_page_preview=True)
